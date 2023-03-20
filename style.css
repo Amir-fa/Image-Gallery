@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #f2f2f2;
+  color: #333;
+  margin-top: 50px;
+}
+
+.slider {
+  height: 80vh;
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide .content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide .content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.slide .content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateX(20px);
+  transition: all 0.5s ease-in-out 0.3s;
+}
+
+button#next {
+  top: 50%;
+  right: 20px;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button#prev {
+  top: 50%;
+  left: 20px;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: #333;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 60vh;
+  }
+
+  .slide .content {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .slide.current .content {
+    transform: translateY(-10px);
+  }
+}
+
+.slide:first-child {
+  background: url('./img/Hoher\ Kasten\,\ Appenzell\ Alps\,\ Switzerland.jpg')
+    no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+  background: url('./img/112736.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(3) {
+  background: url('./img/Mountain.jpg') no-repeat center center/cover;
+}
+
+.slide:nth-child(4) {
+  background: url('./img/Wallow\ county-\ Oregan.jpg') no-repeat center
+    center/cover;
+}
